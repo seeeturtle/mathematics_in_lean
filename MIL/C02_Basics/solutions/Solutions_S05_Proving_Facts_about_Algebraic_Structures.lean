@@ -106,7 +106,8 @@ variable {R : Type*} [StrictOrderedRing R]
 variable (a b c : R)
 
 theorem aux1 (h : a ≤ b) : 0 ≤ b - a := by
-  rw [← sub_self a, sub_eq_add_neg, sub_eq_add_neg, add_comm, add_comm b]
+  rw [← sub_selfls
+   a, sub_eq_add_neg, sub_eq_add_neg, add_comm, add_comm b]
   apply add_le_add_left h
 
 theorem aux2 (h : 0 ≤ b - a) : a ≤ b := by
@@ -131,4 +132,3 @@ example (x y : X) : 0 ≤ dist x y :=by
   linarith [dist_comm x y]
 
 end
-
